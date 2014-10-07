@@ -7,7 +7,7 @@ df <- read.table(txtfile, sep=";", header=T, stringsAsFactors = F, na.strings= "
 file.remove(txtfile)
 dffiltered <- subset(df, (df$Date == "1/2/2007" | df$Date== "2/2/2007")) 
 
-dffiltered$DateTime <- strptime(paste(dffiltered$Date, dffiltered$Ti), "%d/%m/%Y %H:%M:%S")
+dffiltered$DateTime <- strptime(paste(dffiltered$Date, dffiltered$Time), "%d/%m/%Y %H:%M:%S")
 
 dim <-  480
 png("plot2.png", width=dim, height=dim)
